@@ -50,22 +50,18 @@ while(input !== '6'){
 5. Place customer order
 6. Quit` );
   if (input === "1"){
-  console.log ( `This is the inventory:
-  `);
-
-	DonutShop.inventory.forEach(function(donut){
-    console.log(`type: ${donut.type}`);
-    console.log(`price: ${donut.price.toLocaleString('en-us',{ style: 'currency', currency: 'usd'})}`);
-    console.log(`count: ${donut.count}`);
+  DonutShop.inventory.forEach(function(donut){
+    alert(`This is the inventory:
+    type: ${donut.type}
+    price: ${donut.price.toLocaleString('en-us',{ style: 'currency', currency: 'usd'})}
+    count: ${donut.count}`);
   }); 
-  // console.log(a.inventory);
 } else if (input === "2"){
-  alert ( `Total Shop Revenue ${a.revenue}` );
+  alert ( `Total Shop Revenue ${DonutShop.revenue}` );
 } else if (input === "3"){
   let type = prompt( `What type of donut is it?` );
   let price = prompt( `How much does it cost?` );
-  
-	DonutShop.inventory.push(new Donut(type, 0, price));
+	DonutShop.inventory.push(new Donut(type, 0, Number.parseInt(price)));
 }else if (input === "4"){
   let type = prompt ( `What type of donut do you want to add more of?	 
 		${DonutShop.inventory}` );  // grabs from list of inventory
@@ -73,10 +69,15 @@ while(input !== '6'){
 	
 	DonutShop.addDonutsByType(type, parseInt(number))
 }else if (input === "5"){
-  a.order.push(prompt( `What type of donut does customer want?
+  DonutShop.order.push(prompt( `What type of donut does customer want?
   ${DonutShop.inventory}` ));
   DonutShop.order.push(prompt( `How many do they want?` ));
   alert ( DonutShop.order);
 }
 }
 
+// else if (input === "3"){
+//   let type = prompt( `What type of donut is it?` );
+//   let price = prompt( `How much does it cost?` );
+// 	DonutShop.inventory.push(new Donut(type, 0, price));
+// }
