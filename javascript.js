@@ -64,9 +64,9 @@ while(input !== '6'){
 	DonutShop.inventory.push(new Donut(type, 0, Number.parseInt(price)));
 }else if (input === "4"){
   let type = prompt ( `What type of donut do you want to add more of?	 
-		${DonutShop.inventory}` );  // grabs from list of inventory
+		${DonutShop.inventory}` );
+
   let number = prompt ( `How many do you want to add?` ); // adds to order
-	
 	DonutShop.addDonutsByType(type, parseInt(number))
 }else if (input === "5"){
   DonutShop.order.push(prompt( `What type of donut does customer want?
@@ -75,9 +75,3 @@ while(input !== '6'){
   alert ( DonutShop.order);
 }
 }
-
-// else if (input === "3"){
-//   let type = prompt( `What type of donut is it?` );
-//   let price = prompt( `How much does it cost?` );
-// 	DonutShop.inventory.push(new Donut(type, 0, price));
-// }
