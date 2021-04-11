@@ -18,6 +18,14 @@ class donutShop {
 			return donut;
 		});
 	}
+  multiplyDonutsByType(donutType, donutCount){
+		this.inventory = this.inventory.map(function(donutCost){
+			if(donutType === donutCost.type){
+				return donutCost;
+			}
+			
+		});
+	}
 }
 
 class Donut {
@@ -57,8 +65,15 @@ while(input !== '6'){
     count: ${donut.count}`);
   }); 
 } else if (input === "2"){
-  alert ( `Total Shop Revenue ${DonutShop.revenue}` );
-} else if (input === "3"){
+  DonutShop.inventory.forEach(function(donutCost){
+    alert(`This is the inventory:
+    price: ${donutCost.price * DonutShop.order[2]}`);
+  }); 
+}
+// {
+//   alert ( `Total Shop Revenue ${DonutShop.order[2]} * price: ${DonutShop.inventory.keys(Number.parseInt(price))}` );
+// }
+ else if (input === "3"){
   let type = prompt( `What type of donut is it?` );
   let price = prompt( `How much does it cost?` );
 	DonutShop.inventory.push(new Donut(type, 0, Number.parseInt(price)));
