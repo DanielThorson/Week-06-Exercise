@@ -65,7 +65,7 @@ while(input !== '6'){
     count: ${donut.count}`);
   }); 
 } else if (input === "2"){
-  DonutShop.inventory.forEach(function(donutCost){
+  DonutShop.inventory.every(function(donutCost){
     alert(`This is the inventory:
     price: ${donutCost.price * DonutShop.order[2]}`);
   }); 
