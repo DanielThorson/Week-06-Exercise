@@ -84,7 +84,7 @@ while(input !== '6'){
 	DonutShop.addDonutsByType(type, parseInt(number))
 }else if (input === "5"){
   DonutShop.order.push(prompt( `What type of donut does customer want?
-  ${DonutShop.inventory}` ));
+  ${JSON.stringify(DonutShop.inventory)}` ));
   DonutShop.order.push(prompt( `How many do they want?` ));
   alert ( DonutShop.order);
 }
