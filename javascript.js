@@ -33,7 +33,7 @@ class Donut {
   }
 }
 
-let DonutShop = new donutShop([new Donut('creme filled', 3, 2), new Donut('plain', 2, 1)], '', 'maple bacon','eggs',['']);
+let DonutShop = new donutShop([new Donut('creme filled', 3, 2), new Donut('plain', 2, 1)], [''],['']);
 
 let b = new Donut([{type: 'creme filled', count: 2, price: 2}, {type: 'plain', count: 1, price: 1}]);
 
