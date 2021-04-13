@@ -18,14 +18,6 @@ class donutShop {
 			return donut;
 		});
 	}
-  multiplyDonutsByType(donutType, donutCount){
-		this.inventory = this.inventory.map(function(donutCost){
-			if(donutType === donutCost.type){
-				return donutCost;
-			}
-			
-		});
-	}
 }
 
 class Donut {
@@ -42,8 +34,6 @@ class Donut {
 }
 
 let DonutShop = new donutShop([new Donut('creme filled', 3, 2), new Donut('plain', 2, 1)], [''],['']);
-
-let b = new Donut([{type: 'creme filled', count: 2, price: 2}, {type: 'plain', count: 1, price: 1}]);
 
 
 var input;
@@ -69,23 +59,19 @@ while(input !== '6'){
     alert(`This is the inventory:
     price: ${donutCost.price * DonutShop.order[2]}`);
   }); 
-}
-// {
-//   alert ( `Total Shop Revenue ${DonutShop.order[2]} * price: ${DonutShop.inventory.keys(Number.parseInt(price))}` );
-// }
- else if (input === "3"){
+} else if (input === "3"){
   let type = prompt( `What type of donut is it?` );
   let price = prompt( `How much does it cost?` );
 	DonutShop.inventory.push(new Donut(type, 0, Number.parseInt(price)));
-}else if (input === "4"){
+} else if (input === "4"){
   let type = prompt ( `What type of donut do you want to add more of?	 
 		${JSON.stringify(DonutShop.inventory)}` );
   let number = prompt ( `How many do you want to add?` ); // adds to order
 	DonutShop.addDonutsByType(type, parseInt(number))
-}else if (input === "5"){
+} else if (input === "5"){
   DonutShop.order.push(prompt( `What type of donut does customer want?
   ${JSON.stringify(DonutShop.inventory)}` ));
-  DonutShop.order.push(prompt( `How many do they want?` ));
+  DonutShop.order.push(Number.parseInt(prompt( `How many do they want?` )));
   alert ( DonutShop.order);
 }
 }
